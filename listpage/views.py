@@ -1,8 +1,10 @@
 from django.http import HttpResponse
 from django.shortcuts import render_to_response,render, redirect
 import requests
-from .mdr import region_to_dict,Region
-from .dep import Depta
+##from .mdr import region_to_dict,Region
+##from .dep import Depta
+from joblist.mdr import region_to_dict,Region
+from joblist.dep import Depta
 import os
 import time
 from .models import JobList
