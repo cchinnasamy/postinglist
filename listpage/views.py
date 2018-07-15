@@ -3,8 +3,8 @@ from django.shortcuts import render_to_response,render, redirect
 import requests
 ##from .mdr import region_to_dict,Region
 ##from .dep import Depta
-from joblist.mdr import region_to_dict,Region
-from joblist.dep import Depta
+from mdr import region_to_dict,Region
+from dep import Depta
 import os
 import time
 from .models import JobList
@@ -25,10 +25,9 @@ def get_joblist(request):
 
    
    _url=request.GET.get('url','')
-   html=None
+   html=''
    if _url:
        d = Depta()
-       print _url
        seeds = d.extract(url=_url)
        if seeds is not None:
            result=None
@@ -41,11 +40,11 @@ def get_joblist(request):
                     
        #r = requests.get(url,timeout=60)
        #html=r.content
-   if _url and html:
-       obj=JobList()
-       obj.url=_url
-       obj.data=html
-       obj.publish()
+##   if _url and html:
+##       obj=JobList()
+##       obj.url=_url
+##       obj.data=html
+##       obj.publish()
 
-   return HttpResponse("<html>%s<br><div>%s</div></html>"%(body,html))
+   return HttpResponse('<html>%s<br><div class="CrawlJobList">%s</div></html>'%(body,html))
    #return render_to_response("search/htmlsearch.html",{'url':_url,'html':html})

@@ -72,8 +72,16 @@ TEMPLATES = [
 WSGI_APPLICATION = 'jobs.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/1.9/ref/settings/#databases
+
+##from .base import 
+##import dj_database_url
+##
+##ENVIRONMENT = 'production'
+##DEBUG = False
+##ALLOWED_HOSTS = ['']
+##DATABASES['default'] = dj_database_url.config(
+##    default='postgres://jppvdzaestgmae:4f832941bb39041664ae7e5a8b427ece90ffdf418e8531b01a1ed53c2c498a7b@ec2-23-23-92-179.compute-1.amazonaws.com:5432/deaice9849dich'
+##)
 
 DATABASES = {
     'default': {
