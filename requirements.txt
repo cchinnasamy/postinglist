@@ -14,4 +14,3 @@ lxml
 w3lib
 scrapely
 cython
-git+https://github.com/cchinnasamy/list.git#egg=joblist
