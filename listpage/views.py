@@ -25,9 +25,10 @@ def get_joblist(request):
 
    
    _url=request.GET.get('url','')
-   html=''
+   html=None
    if _url:
        d = Depta()
+       print _url
        seeds = d.extract(url=_url)
        if seeds is not None:
            result=None
